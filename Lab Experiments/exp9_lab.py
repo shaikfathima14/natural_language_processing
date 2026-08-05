@@ -1,0 +1,17 @@
+import re
+
+sentence = input("Enter a sentence: ")
+
+words = sentence.split()
+
+for word in words:
+    if re.search("ing$", word):
+        tag = "VBG"
+    elif re.search("ed$", word):
+        tag = "VBD"
+    elif re.search("ly$", word):
+        tag = "RB"
+    else:
+        tag = "NN"
+
+    print(word, "->", tag)
